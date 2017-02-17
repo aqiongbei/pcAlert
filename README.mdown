@@ -1,0 +1,35 @@
+# PcAlert
+一个pc端带有二维码的弹出框
+
+## 简介
+一个当移动端demo在pc端打开时会出现带有demo链接的二维码提示框，用手机扫描二维码即可预览demo，方便用户更好的预览。
+
+## 目录结构
+```sh
+	pcAlert.js
+	pcAlert.css
+	qrcode.js
+	index.html
+	README.md
+```
+
+## 使用方法
+1. 引入`qrcode.js`、`pcAlert.js`、`pcAlert.css`，其中`pcAlert.js`必须放在`body`标签下面，`qrcode.js`必须在`pcAlert.js`之前引入。
+2. 在`body`下面插入`script`标签（只要是在DOM加载完成之后首先执行就行）:
+```js
+<script>
+var pcAlertTest=new pcAlert({
+	pcAlertTitle: //弹出框标题，默认值:'Yeah！有人来看我的DEMO了！',
+	pcAlertPartOne: //弹出框二维码下第一句话，默认值:'这是一份移动端DEMO哦~',
+	pcAlertPartTwo: //弹出框二维码下第二句话，默认值:'在手机上看效果才好呢！',
+	pcAlertPartThree: //弹出框二维码下第三句话，默认值:'赶紧掏出微信扫描二维码吧！',
+	pcAlertBtnLeft: //弹出框左按钮文字，默认值:'好哒，这就去扫',
+	pcAlertBtnRight: //弹出框右按钮文字，默认值:'破事多，不看了',
+	pcAlertBtnLeftClick: //弹出框左按钮点击之后的文字，默认值:'谢谢！你真是个好人！',
+	pcAlertBtnRightClick: //弹出框右按钮点击之后的文字，默认值:'你确定不扫一下吗？恩！？'
+});
+</script>
+```
+
+## DEMO
+demo预览地址:

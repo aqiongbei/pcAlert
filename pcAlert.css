@@ -1,0 +1,157 @@
+html,
+body,
+p,
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.comeIn {
+    opacity: 1 !important;
+    -webkit-animation: zoomIn 0.4s both;
+    animation: zoomIn 0.4s both;
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 20;
+}
+
+.pcAlertBoxWrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 330px;
+    height: 474px;
+    font-family: '宋体';
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 30;
+    color: #333;
+}
+
+.pcAlertBoxHeader h3 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    background-color: #f1f1f1;
+}
+
+.pcAlertBoxContent {
+    height: 372px;
+    margin-top: 1px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.QRCodeImgWrap img {
+    padding-top: 20px;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.pcAlertBoxContent p {
+    color: #dd3b44;
+    margin: 0;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.pcAlertBoxFooter {
+    margin-top: 1px;
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+}
+
+.pcAlertBoxFooter span {
+    overflow: hidden;
+    text-align: center;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.pcAlertBoxFooterLeft {
+    width: 165px;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+}
+
+.pcAlertBoxFooterRight {
+    margin-left: 1px;
+    width: 164px;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+}
+
+.toRightBig {
+    width: 330px;
+}
+
+.toRightSmall {
+    width: 0;
+}
+
+.toLeftBig {
+    width: 100%;
+    margin-left: 0;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+}
+
+.toLeftSmall {
+    width: 0;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+}
+
+@-webkit-keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
