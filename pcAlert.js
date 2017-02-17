@@ -5,7 +5,7 @@
 function PcAlert(options) {
     this.dBody = document.body;
     this.QRCodeUrl = window.location.href;
-    this.defalutOptions = {
+    this.defaultOption = {
         pcAlertTitle: 'Yeah！有人来看我的DEMO了！',
         pcAlertPartOne: '这是一份移动端DEMO哦~',
         pcAlertPartTwo: '在手机上看效果才好呢！',
@@ -13,10 +13,11 @@ function PcAlert(options) {
         pcAlertBtnLeft: '好哒，这就去扫',
         pcAlertBtnRight: '破事多，不看了',
         pcAlertBtnLeftClick: '谢谢！你真是个好人！',
-        pcAlertBtnRightClick: '你确定不扫一下吗？恩！？'
+        pcAlertBtnRightClick: '你确定不扫一下吗？恩！？',
+        callback: function() {}
     };
     for (key in options) {
-        this.defalutOptions[key] = options[key];
+        this.defaultOption[key] = options[key];
     }
     this.init();
 }
@@ -25,11 +26,13 @@ PcAlert.prototype = {
     init: function() {
         if (this.isPC()) {
             this.pcAlertBox();
+        } else {
+            this.defaultOption.callback();
         }
     },
     // PC端弹窗提示
     pcAlertBox: function() {
-        var pcAlertstr = '<div class="pcAlertBoxHeader"><h3>' + this.defalutOptions.pcAlertTitle + '</h3></div><div class="pcAlertBoxContent"><div id="QRCodeImgWrap" class="QRCodeImgWrap" alt=""></div><p>' + this.defalutOptions.pcAlertPartOne + '</p><p>' + this.defalutOptions.pcAlertPartTwo + '</p><p>' + this.defalutOptions.pcAlertPartThree + '</p></div><div class="pcAlertBoxFooter"><span class="pcAlertBoxFooterLeft">' + this.defalutOptions.pcAlertBtnLeft + '</span><span class="pcAlertBoxFooterRight">' + this.defalutOptions.pcAlertBtnRight + '</span></div>';
+        var pcAlertstr = '<div class="pcAlertBoxHeader"><h3>' + this.defaultOption.pcAlertTitle + '</h3></div><div class="pcAlertBoxContent"><div id="QRCodeImgWrap" class="QRCodeImgWrap" alt=""></div><p>' + this.defaultOption.pcAlertPartOne + '</p><p>' + this.defaultOption.pcAlertPartTwo + '</p><p>' + this.defaultOption.pcAlertPartThree + '</p></div><div class="pcAlertBoxFooter"><span class="pcAlertBoxFooterLeft">' + this.defaultOption.pcAlertBtnLeft + '</span><span class="pcAlertBoxFooterRight">' + this.defaultOption.pcAlertBtnRight + '</span></div>';
         document.body.innerHTML = '';
         var pcAlert = document.createElement('div');
         var mask = document.createElement('div');
@@ -46,14 +49,14 @@ PcAlert.prototype = {
             noBtn.className = 'pcAlertBoxFooterRight toRightSmall';
             yesBtn.className = 'pcAlertBoxFooterLeft toRightBig';
             noBtn.innerHTML = '';
-            yesBtn.innerHTML = _this.defalutOptions.pcAlertBtnLeftClick;
+            yesBtn.innerHTML = _this.defaultOption.pcAlertBtnLeftClick;
             yesBtn.onclick = null;
         }
         noBtn.onclick = function() {
             yesBtn.className = 'toLeftSmall';
             noBtn.className = 'toLeftBig';
             yesBtn.innerHTML = '';
-            noBtn.innerHTML = _this.defalutOptions.pcAlertBtnRightClick;
+            noBtn.innerHTML = _this.defaultOption.pcAlertBtnRightClick;
             noBtn.onclick = null;
         }
     },

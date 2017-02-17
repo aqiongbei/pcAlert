@@ -15,7 +15,10 @@
 <script src="pcAlert.js"></script>
 <script>
 var p = new PcAlert({
-    pcAlertTitle: "action"
+    pcAlertTitle: "这里是你的标题",
+    callback: function() {
+        document.write('只有移动端才能看到这句话');
+    }
 });
 </script>
 

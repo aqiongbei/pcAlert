@@ -1,5 +1,5 @@
 # PcAlert
-一个pc端带有二维码的弹出框
+更好的预览移动端demo
 
 ## 简介
 一个当移动端demo在pc端打开时会出现带有demo链接的二维码提示框，用手机扫描二维码即可预览demo，方便用户更好的预览。
@@ -26,10 +26,11 @@ var pcAlertTest=new pcAlert({
 	pcAlertBtnLeft: //弹出框左按钮文字，默认值:'好哒，这就去扫',
 	pcAlertBtnRight: //弹出框右按钮文字，默认值:'破事多，不看了',
 	pcAlertBtnLeftClick: //弹出框左按钮点击之后的文字，默认值:'谢谢！你真是个好人！',
-	pcAlertBtnRightClick: //弹出框右按钮点击之后的文字，默认值:'你确定不扫一下吗？恩！？'
+	pcAlertBtnRightClick: //弹出框右按钮点击之后的文字，默认值:'你确定不扫一下吗？恩！？',
+	callback:function(){}//只有在移动端的时候才会执行这个回调
 });
 </script>
 ```
 
 ## DEMO
-demo预览地址:
+demo预览地址:http://aqiongbei.top/pcAlert/
