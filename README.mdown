@@ -33,4 +33,4 @@ var pcAlertTest=new pcAlert({
 ```
 
 ## DEMO
-demo预览地址:http://aqiongbei.top/pcAlert/
+demo预览地址:http://aqiongbei.github.io/pcAlert/
